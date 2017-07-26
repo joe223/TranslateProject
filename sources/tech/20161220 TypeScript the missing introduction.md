@@ -1,13 +1,20 @@
 [HaitaoBio](https://github.com/HaitaoBio)
 
 TypeScript: the missing introduction
+TypeScript: 被遗忘的介绍
 ============================================================
 
 
-**The following is a guest post by James Henry ([@MrJamesHenry][8]). I am a member of the ESLint Core Team, and a TypeScript evangelist. I am working with Todd on [UltimateAngular][9] to bring you more award-winning Angular and TypeScript courses.**
+**The following is a guest post by James Henry ([@MrJamesHenry][8]). I am a
+这是一篇 James Henry ([@MrJamesHenry][8]) 的客座文章。我是 ESLint 的核心开发成员，并且是 TypeScript 的布道者。
+ member of the ESLint Core Team, and a TypeScript evangelist. I am working with Todd on [UltimateAngular][9] to bring you more award-winning Angular and
+我和 Todd 共事于 [UltimateAngular][9]，以求为您带来更多优质的 Angular 及 TypeScript 课程。
+ TypeScript courses.**
 
-> The purpose of this article is to offer an introduction to how we can think about TypeScript, and its role in supercharging our **JavaScript** development. 
-> 
+> The purpose of this article is to offer an introduction to how we can think
+这篇文章的目的在于
+about TypeScript, and its role in supercharging our **JavaScript** development. 
+>
 > We will also try and come up with our own reasonable definitions for a lot of the buzzwords surrounding types and compilation.
 
 There is huge amount of great stuff in the TypeScript project that we won’t be able to cover within the scope of this blog post. Please read the [official documentation][15] to learn more, and check out the [TypeScript courses over on UltimateAngular][16] to go from total beginner to TypeScript Pro!
@@ -147,7 +154,7 @@ We know from our traditional nightly ritual of reading the [latest ECMAScript s
 Taken directly from the official spec:
 
 > An ECMAScript language type corresponds to values that are directly manipulated by an ECMAScript programmer using the ECMAScript language. 
-> 
+>
 > The ECMAScript language types are Undefined, Null, Boolean, String, Symbol, Number, and Object.
 
 We can see that the JavaScript language officially has 7 types, of which we have likely used 6 in just about every real-world program we have ever written (Symbol was first introduced in ES2015, a.k.a. ES6).
@@ -184,7 +191,7 @@ And guess what? We have just seen our first bit of TypeScript in action!
 When we reflect on our own code (no programming pun intended), we can likely conclude that even when we are working with dynamic languages like JavaScript, in almost all cases we should have pretty clear intentions for the usage of our variables and function parameters when we first define them. If those variables and parameters are reassigned to hold values of _different_ types to ones we first assigned them to, it is possible that something is not working out as we planned.
 
 > One great power that the static type annotations from TypeScript give us, as JavaScript authors, is the ability to clearly express our intentions for our variables. 
-> 
+>
 > This improved clarity benefits not only the TypeScript compiler, but also our colleagues and future selves when they come to read and understand our code. Code is _read_ far more than it is written.
 
 ### [TypeScript’s role in our JavaScript workflow][26]
@@ -216,7 +223,7 @@ name = sum;
 The type annotations are all removed for us automatically, and we can now run our code.
 
 > NOTE: In this example, the TypeScript Compiler would have been able to offer us the exact same error even if we hadn’t provided the explicit type annotations `: string` and `: number`. 
-> 
+>
 > TypeScript is very often able to just _infer_ the type of a variable from the way we have used it!
 
 #### [Our source file is our document, TypeScript is our Spell Check][27]
@@ -328,7 +335,7 @@ After a _thorough_ code review and appropriate bikeshedding, it is decided tha
 
 In our code editors, we have long been able to select multiple occurrences of the same text and use multiple cursors to change all of them at once - awesome!
 
- ![Manually select matches](https://toddmotto.com/img/posts/typescript-the-missing-introduction/manually-select-match.gif) 
+ ![Manually select matches](https://toddmotto.com/img/posts/typescript-the-missing-introduction/manually-select-match.gif)
 
 Ah! We have fallen into one of the classic traps that appear when we continue to treat our programs as pieces of text.
 
@@ -338,7 +345,7 @@ As we learned above, when something like TypeScript generates an AST for our pro
 
 We can take advantage of this directly in VS Code using the “rename symbol” option when we right click on our `first_name` variable (TypeScript Language Server plugins are available for other editors).
 
- ![Rename Symbol Example](https://toddmotto.com/img/posts/typescript-the-missing-introduction/rename-symbol-example.gif) 
+ ![Rename Symbol Example](https://toddmotto.com/img/posts/typescript-the-missing-introduction/rename-symbol-example.gif)
 
 Much better! Now our `first_name` variable is the only thing that will be changed, and this change will even happen across multiple files in our project if applicable (as with exported and imported values)!
 
